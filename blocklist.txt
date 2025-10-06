@@ -1,16 +1,15 @@
 mta7.smtp.airbnb.com
 qsocket.io
+*.qsocket.io
+gsocket.io
+*.gsocket.io
 zorokun.xyz
 ngrok.io
 paste.ee
-pastebin.com
-gsocket.io
-cdn.gsocket.io
-www.gsocket.io
 doh.li
 tor2web
 tor2socks
-.onion
+*.onion
 f.gs.thc.org
 oliversykes.me
 rshell.saskra.com
@@ -19,5 +18,5 @@ siyahi.top
 malamminggumiko.xyz
 hxbdoor.one
 o.gs.thc.org
-.segfault.net
+*.segfault.net
 t.gs.thc.org
