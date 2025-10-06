@@ -1,0 +1,4 @@
+*.qsocket.io
+*.gsocket.io
+*.onion
+*.segfault.net
