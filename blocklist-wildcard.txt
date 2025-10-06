@@ -20,3 +20,4 @@
 *.malamminggumiko.xyz
 *.hxbdoor.one
 *.o.gs.thc.org
+*.static.cloudzy.com
