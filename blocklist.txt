@@ -1,0 +1,2 @@
+mta7.smtp.airbnb.com
+qsocket.io
