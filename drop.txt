@@ -1,8 +1,7 @@
 ; Diskominfo Jabar IT Security
 ; https://raw.githubusercontent.com/diskominfojabar/hosts/refs/heads/main/drop.txt
-; Last-Modified: Mon, 06 Oct 2025 08:46:40 WIB
-; Expires: Mon, 13 Oct 2025 07:00:00 WIB
 ; Don't Route Or Peer (DROP)
+
 1.10.16.0/20 ; SBL256894
 1.19.0.0/16 ; SBL434604
 1.32.128.0/18 ; SBL286275
@@ -1597,4 +1596,5 @@
  206.189.38.145
  206.189.95.164
  209.38.29.150
+10.0.1.139 ; Lokal
 ; EOF
