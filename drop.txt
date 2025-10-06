@@ -1,5 +1,5 @@
 ; Diskominfo Jabar IT Security
-; 
+; https://raw.githubusercontent.com/diskominfojabar/hosts/refs/heads/main/drop.txt
 ; Last-Modified: Sat, 04 Oct 2025 15:39:40 GMT
 ; Expires: Sun, 05 Oct 2025 17:47:13 GMT
 ; Don't Route Or Peer (DROP)
