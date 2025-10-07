@@ -1598,4 +1598,5 @@
 209.38.29.150
 10.0.1.139;Lokal
 102.129.138.103;DariJampangterdeteksiXMRigMiner
+47.236.1.18
 ;EOF
