@@ -1,3 +1,7 @@
+; JabarCloud Security Team
+; Anomalies activity reported list
+; Since 2025
+
 t.gs.thc.org
 mta7.smtp.airbnb.com
 qsocket.io
@@ -27,3 +31,10 @@ premicloud.net
 sofavpn.com
 semarpasti.com
 highperformanceformat.com
+dresslarmfg.com
+lifelinekirklees.org.uk
+wanadoo.nl
+worldnet.net
+abm.bz
+dresslarmfg.com
+lifelinekirklees.org.uk
