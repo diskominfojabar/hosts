@@ -21,3 +21,4 @@
 *.hxbdoor.one
 *.o.gs.thc.org
 *.static.cloudzy.com
+*.eccwallet.com
