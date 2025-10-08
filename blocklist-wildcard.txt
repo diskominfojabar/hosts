@@ -23,3 +23,4 @@
 *.static.cloudzy.com
 *.eccwallet.com
 *.criptolayer.net
+*.byteoversea.com
