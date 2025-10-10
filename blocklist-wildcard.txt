@@ -24,3 +24,5 @@
 *.eccwallet.com
 *.criptolayer.net
 *.byteoversea.com
+*.peer2profit.global
+*.peer2profit.com
