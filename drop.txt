@@ -1599,4 +1599,7 @@
 10.0.1.139;Lokal
 102.129.138.103;DariJampangterdeteksiXMRigMiner
 47.236.1.18
+180.252.223.188 ; Malicious dari panel5
+185.213.83.115 ; Malicious dari panel5
+185.213.83.94 ; Malicious dari panel5
 ;EOF
