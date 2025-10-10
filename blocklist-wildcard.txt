@@ -27,3 +27,7 @@
 *.peer2profit.global
 *.peer2profit.com
 *.hpyjmp.com
+*.otigos.com
+*.xhamster.desi
+*.xhamster.com
+*.xlivrdr.com
