@@ -26,3 +26,4 @@
 *.byteoversea.com
 *.peer2profit.global
 *.peer2profit.com
+*.hpyjmp.com
