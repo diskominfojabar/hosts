@@ -31,3 +31,4 @@
 *.xhamster.desi
 *.xhamster.com
 *.xlivrdr.com
+*.eecwallet.com
