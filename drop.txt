@@ -1,6 +1,6 @@
-;DiskominfoJabarITSecurity
-;https://raw.githubusercontent.com/diskominfojabar/hosts/refs/heads/main/drop.txt
-;Don'tRouteOrPeer(DROP)
+; Diskominfo Jabar IT Security
+; https://raw.githubusercontent.com/diskominfojabar/hosts/refs/heads/main/drop.txt
+; Don't Route Or Peer(DROP)
 
 1.10.16.0/20;SBL256894
 1.19.0.0/16;SBL434604
