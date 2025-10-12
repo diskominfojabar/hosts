@@ -25,6 +25,7 @@
 *.peer2profit.com
 *.peer2profit.global
 *.pouyasazan.org
+*.rayankhodro.com
 *.qsocket.io
 *.qsocket.io
 *.rshell.saskra.com
