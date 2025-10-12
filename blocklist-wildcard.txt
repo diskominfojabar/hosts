@@ -14,6 +14,7 @@
 *.hpyjmp.com
 *.hxbdoor.one
 *.malamminggumiko.xyz
+*.moldtelecom.md
 *.mta7.smtp.airbnb.com
 *.ngrok.io
 *.o.gs.thc.org
