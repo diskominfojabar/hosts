@@ -24,6 +24,7 @@
 *.paste.ee
 *.peer2profit.com
 *.peer2profit.global
+*.pouyasazan.org
 *.qsocket.io
 *.qsocket.io
 *.rshell.saskra.com
