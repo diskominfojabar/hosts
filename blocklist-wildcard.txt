@@ -11,6 +11,8 @@
 *.f.gs.thc.org
 *.gsocket.io
 *.gsocket.io
+*.gvt2.com
+*.gvt3.com
 *.hpyjmp.com
 *.hxbdoor.one
 *.malamminggumiko.xyz
