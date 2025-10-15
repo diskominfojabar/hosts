@@ -28,6 +28,7 @@
 *.paste.ee
 *.peer2profit.com
 *.peer2profit.global
+*.poneytelecom.eu
 *.pouyasazan.org
 *.rayankhodro.com
 *.qsocket.io
