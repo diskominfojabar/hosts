@@ -41,6 +41,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+          git pull
           git add googlebot.txt
           git commit -m "Update googlebot IPs - $(date +'%Y-%m-%d %H:%M WIB')"
           git push
