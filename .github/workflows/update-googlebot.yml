@@ -1,4 +1,6 @@
 name: Update Googlebot IPs
+permissions:
+  contents: write
 
 on:
   schedule:
