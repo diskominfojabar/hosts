@@ -43,4 +43,5 @@
 *.xhamster.com
 *.xhamster.desi
 *.xlivrdr.com
+*.your-server.de
 *.zorokun.xyz
