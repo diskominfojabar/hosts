@@ -25,7 +25,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          pip install requests
+          pip install -r scripts/requirements.txt
       
       - name: Fetch and update Googlebot IPs
         run: |
