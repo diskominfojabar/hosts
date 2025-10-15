@@ -10,7 +10,7 @@ on:
 
 jobs:
   update-googlebot-ips:
-    runs-on: [self-hosted, f14z-core]
+    runs-on: [self-hosted]
 
     
     steps:
