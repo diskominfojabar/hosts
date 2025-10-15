@@ -1,0 +1,44 @@
+name: Update Googlebot IPs
+
+on:
+  schedule:
+    # Runs at 09:00 UTC (16:00 WIB) every day
+    - cron: '0 9 * * *'
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  update-googlebot-ips:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install requests
+      
+      - name: Fetch and update Googlebot IPs
+        run: |
+          python scripts/fetch-googlebot-ips.py
+      
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code googlebot.txt || echo "changed=true" >> $GITHUB_OUTPUT
+      
+      - name: Commit and push if changed
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add googlebot.txt
+          git commit -m "Update googlebot IPs - $(date +'%Y-%m-%d %H:%M WIB')"
+          git push
