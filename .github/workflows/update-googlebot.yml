@@ -1,18 +1,18 @@
 name: Update Googlebot IPs
+
 permissions:
   contents: write
   actions: read
 
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '0 9 * * *'  # Runs at 09:00 UTC (16:00 WIB) every day
   workflow_dispatch:
 
 jobs:
   update-googlebot-ips:
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
 
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
