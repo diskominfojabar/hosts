@@ -1,5 +1,5 @@
 ; Google bot IPs allowed by LHR
-; Based on data crawling @ 2025-10-17 16:15 WIB
+; Based on data crawling @ 2025-10-18 16:12 WIB
 ; Please re-check and verify
 107.178.192.0/27
 107.178.192.128/27
