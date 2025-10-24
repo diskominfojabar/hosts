@@ -46,6 +46,7 @@ def write_to_file(ips, filename='googlebot.txt'):
     with open(filename, 'w') as f:
         f.write("; Google bot IPs allowed by LHR\n")
         f.write(f"; Based on data crawling @ {current_time}\n")
+        f.write("; Source: https://developers.google.com/static/search/apis/ipranges/googlebot.json https://developers.google.com/static/search/apis/ipranges/special-crawlers.json https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers.json and https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers-google.json\n")
         f.write("; Please re-check and verify\n")
         
         for ip in ips:
