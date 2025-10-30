@@ -1,5 +1,5 @@
 ; Google bot IPs allowed by LHR
-; Based on data crawling @ 2025-10-29 16:14 WIB
+; Based on data crawling @ 2025-10-30 16:15 WIB
 ; Source: https://developers.google.com/static/search/apis/ipranges/googlebot.json https://developers.google.com/static/search/apis/ipranges/special-crawlers.json https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers.json and https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers-google.json
 ; Please re-check and verify
 107.178.192.0/27
