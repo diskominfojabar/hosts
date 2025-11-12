@@ -1,5 +1,5 @@
 ; Google bot IPs allowed by LHR
-; Based on data crawling @ 2025-11-11 16:15 WIB
+; Based on data crawling @ 2025-11-12 16:16 WIB
 ; Source: https://developers.google.com/static/search/apis/ipranges/googlebot.json https://developers.google.com/static/search/apis/ipranges/special-crawlers.json https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers.json and https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers-google.json
 ; Please re-check and verify
 107.178.192.0/27
@@ -614,6 +614,7 @@
 2001:4860:4801:56::/64
 2001:4860:4801:57::/64
 2001:4860:4801:58::/64
+2001:4860:4801:59::/64
 2001:4860:4801:60::/64
 2001:4860:4801:61::/64
 2001:4860:4801:62::/64
@@ -1084,6 +1085,7 @@
 2600:1900:0:96::/64
 2600:1900:0:97::/64
 2600:1900:0:98::/64
+2600:1900:0:99::/64
 2600:1900:0:9::/64
 2600:1900:0:a0::/64
 2600:1900:0:a1::/64
@@ -1307,6 +1309,7 @@
 34.127.132.96/27
 34.127.134.0/27
 34.127.134.32/27
+34.127.134.64/27
 34.127.136.0/27
 34.127.136.128/27
 34.127.136.160/27
@@ -1626,6 +1629,7 @@
 66.249.66.96/27
 66.249.67.0/27
 66.249.67.32/27
+66.249.67.64/27
 66.249.68.0/27
 66.249.68.128/27
 66.249.68.160/27
