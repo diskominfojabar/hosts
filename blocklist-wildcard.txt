@@ -18,6 +18,7 @@
 *.judi-8.site
 *.judi-8.*
 *.malamminggumiko.xyz
+*.minexmr.com
 *.moldtelecom.md
 *.mta7.smtp.airbnb.com
 *.ngrok.io
