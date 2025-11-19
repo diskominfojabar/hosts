@@ -5,7 +5,6 @@
 *.0x1999.tech
 *.byteoversea.com
 *.criptolayer.net
-*.ddns.net
 *.doh.li
 *.eccwallet.com
 *.eecwallet.com
