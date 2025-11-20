@@ -1,13 +1,12 @@
 name: Fetch AbuseIPDB Blacklist
 
-permissions:
-  contents: write
-  actions: read
-  
 on:
   schedule:
-    - cron: '0 2 * * *'  # Setiap hari jam 2 pagi UTC
-  workflow_dispatch:  # Manual trigger
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   fetch-blacklist:
@@ -15,34 +14,43 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Fetch AbuseIPDB Blacklist
         env:
           ABUSEIPDB_KEY: ${{ secrets.ABUSEIPDB_API_KEY }}
         run: |
-          # Fetch blacklist dari AbuseIPDB
+          echo "📥 Fetching blacklist dari AbuseIPDB..."
+          
           curl -G "https://api.abuseipdb.com/api/v2/blacklist" \
             --data-urlencode "key=${ABUSEIPDB_KEY}" \
             --data-urlencode "plaintext" \
             --data-urlencode "limit=65000" \
             --data-urlencode "confidenceMinimum=75" \
-            -o abuseipdb-blacklist.txt
+            -H "User-Agent: GitHub-Actions" \
+            -o abuseipdb-blacklist.txt \
+            -w "\nHTTP Status: %{http_code}\n"
           
-          # Tampilkan stats
-          echo "Total IPs dalam blacklist:"
-          wc -l abuseipdb-blacklist.txt
+          # Validasi file
+          if [ ! -s abuseipdb-blacklist.txt ]; then
+            echo "❌ ERROR: File kosong atau gagal diunduh!"
+            exit 1
+          fi
+          
+          echo "✅ Blacklist berhasil diunduh"
+          echo "📊 Total IPs: $(wc -l < abuseipdb-blacklist.txt)"
       
-      - name: Commit dan Push changes
+      - name: Commit dan Push
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           
-          # Hanya commit jika ada perubahan
-          if git diff --quiet; then
-            echo "Tidak ada perubahan pada blacklist"
-          else
-            git add abuseipdb-blacklist.txt
-            git commit -m "Update AbuseIPDB blacklist - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git add abuseipdb-blacklist.txt
+          
+          if ! git diff --cached --quiet; then
+            git commit -m "⬆️ Update AbuseIPDB blacklist - $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
+            echo "✅ File berhasil di-push"
+          else
+            echo "ℹ️ Tidak ada perubahan pada blacklist"
           fi
