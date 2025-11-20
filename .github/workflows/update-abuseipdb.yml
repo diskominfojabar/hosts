@@ -1,0 +1,44 @@
+name: Fetch AbuseIPDB Blacklist
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # Setiap hari jam 2 pagi UTC
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  fetch-blacklist:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Fetch AbuseIPDB Blacklist
+        env:
+          ABUSEIPDB_KEY: ${{ secrets.ABUSEIPDB_API_KEY }}
+        run: |
+          # Fetch blacklist dari AbuseIPDB
+          curl -G "https://api.abuseipdb.com/api/v2/blacklist" \
+            --data-urlencode "key=${ABUSEIPDB_KEY}" \
+            --data-urlencode "plaintext" \
+            --data-urlencode "limit=65000" \
+            --data-urlencode "confidenceMinimum=75" \
+            -o abuseipdb-blacklist.txt
+          
+          # Tampilkan stats
+          echo "Total IPs dalam blacklist:"
+          wc -l abuseipdb-blacklist.txt
+      
+      - name: Commit dan Push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # Hanya commit jika ada perubahan
+          if git diff --quiet; then
+            echo "Tidak ada perubahan pada blacklist"
+          else
+            git add abuseipdb-blacklist.txt
+            git commit -m "Update AbuseIPDB blacklist - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+            git push
+          fi
