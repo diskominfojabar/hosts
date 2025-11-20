@@ -1,0 +1,3 @@
+# AbuseIPDB Blacklist
+# File ini akan diupdate secara otomatis oleh GitHub Actions
+# Setiap hari jam 2 pagi UTC
