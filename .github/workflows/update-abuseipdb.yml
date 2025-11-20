@@ -1,5 +1,9 @@
 name: Fetch AbuseIPDB Blacklist
 
+permissions:
+  contents: write
+  actions: read
+  
 on:
   schedule:
     - cron: '0 2 * * *'  # Setiap hari jam 2 pagi UTC
