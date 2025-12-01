@@ -1,5 +1,5 @@
 ; Cloudflare IPs
-; Based on data crawling @ 2025-11-01 17:09 WIB
+; Based on data crawling @ 2025-12-01 17:12 WIB
 ; Source: https://www.cloudflare.com/ips-v4/ and https://www.cloudflare.com/ips-v6/
 ; Please re-check and verify
 
