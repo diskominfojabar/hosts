@@ -1,0 +1,48 @@
+name: Update IP & Domain Lists
+
+on:
+  schedule:
+    - cron: '0 0 1 * *' # Bulanan
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Requirements
+        run: |
+          # Pastikan file requirements.txt ada isi: requests, pytz
+          pip install -r scripts/requirements.txt
+
+      - name: Run Manager Script
+        env:
+          ABUSEIPDB_KEY: ${{ secrets.ABUSEIPDB_API_KEY }}
+        run: |
+          python scripts/manager.py
+
+      - name: Commit & Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Add folder lists/ tempat output disimpan
+          git add lists/*.txt
+          
+          if ! git diff --cached --quiet; then
+            git commit -m "🔄 Auto-update lists - $(date +'%Y-%m-%d')"
+            git pull --rebase
+            git push
+          else
+            echo "ℹ️ No changes detected"
+          fi
