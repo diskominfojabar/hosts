@@ -2,9 +2,7 @@ name: Unified List Update
 
 on:
   schedule:
-    # Jalan setiap tanggal 1 jam 00:00 UTC (07:00 WIB)
-    # Ubah cron sesuai kebutuhan, misal '0 0 1 * *' untuk bulanan
-    - cron: '0 0 1 * *'
+    - cron: '0 9 * * *'  # Runs at 09:00 UTC (16:00 WIB) every day
   workflow_dispatch: # Agar bisa dijalankan manual kapan saja
 
 permissions:
