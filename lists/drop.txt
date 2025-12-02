@@ -1,7 +1,7 @@
-; drop.txt - Updated at 2025-12-02 23:01 WIB
-; Source: AbuseIPDB High Confidence
+; Updated at: 2025-12-02 23:18 WIB
+; Sources included: 
 ; Total Entries: 16288
-; ----------------------------------------
+; --------------------------------------------
 1.10.16.0/20 ; SBL256894
 1.117.227.101
 1.12.64.80

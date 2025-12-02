@@ -1,12 +1,7 @@
-; Updated at: 2025-12-02 22:59 WIB
-; Sources included: abuseipdb
-; Total Entries: 0
-; --------------------------------------------
-
-; whitelist-domain.txt - Updated at 2025-12-02 23:01 WIB
-; Source: GitHub, AWS Domains
+; Updated at: 2025-12-02 23:18 WIB
+; Sources included: 
 ; Total Entries: 94
-; ----------------------------------------
+; --------------------------------------------
 *.actions.githubusercontent.com
 *.api.github.com
 *.azureedge.net
