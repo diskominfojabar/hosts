@@ -2,3 +2,47 @@
 ; Source: Manual/Custom Blocklist
 ; Total Entries: 0
 ; ----------------------------------------
+*.0x1999.tech
+*.byteoversea.com
+*.criptolayer.net
+*.doh.li
+*.eccwallet.com
+*.eecwallet.com
+*.f.gs.thc.org
+*.gsocket.io
+*.gsocket.io
+*.gvt2.com
+*.gvt3.com
+*.hpyjmp.com
+*.hxbdoor.one
+*.judi-8.site
+*.judi-8.*
+*.malamminggumiko.xyz
+*.minexmr.com
+*.moldtelecom.md
+*.mta7.smtp.airbnb.com
+*.ngrok.io
+*.o.gs.thc.org
+*.oliversykes.me
+*.onion
+*.otigos.com
+*.paste.ee
+*.peer2profit.com
+*.peer2profit.global
+*.poneytelecom.eu
+*.pouyasazan.org
+*.rayankhodro.com
+*.qsocket.io
+*.qsocket.io
+*.rshell.saskra.com
+*.segfault.net
+*.siyahi.top
+*.static.cloudzy.com
+*.t.gs.thc.org
+*.tor2socks
+*.tor2web
+*.xhamster.com
+*.xhamster.desi
+*.xlivrdr.com
+*.your-server.de
+*.zorokun.xyz
