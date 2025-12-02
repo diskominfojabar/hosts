@@ -1,6 +1,6 @@
-; blacklist-domain.txt - Updated at 2025-12-02 22:48 WIB
+; blacklist-domain.txt - Updated at 2025-12-02 23:01 WIB
 ; Source: Manual/Custom Blocklist
-; Total Entries: 0
+; Total Entries: 92
 ; ----------------------------------------
 *.0x1999.tech
 *.byteoversea.com
@@ -10,13 +10,12 @@
 *.eecwallet.com
 *.f.gs.thc.org
 *.gsocket.io
-*.gsocket.io
 *.gvt2.com
 *.gvt3.com
 *.hpyjmp.com
 *.hxbdoor.one
-*.judi-8.site
 *.judi-8.*
+*.judi-8.site
 *.malamminggumiko.xyz
 *.minexmr.com
 *.moldtelecom.md
@@ -31,9 +30,8 @@
 *.peer2profit.global
 *.poneytelecom.eu
 *.pouyasazan.org
+*.qsocket.io
 *.rayankhodro.com
-*.qsocket.io
-*.qsocket.io
 *.rshell.saskra.com
 *.segfault.net
 *.siyahi.top
@@ -67,8 +65,8 @@ hxbdoor.one
 interia.pl
 lifelinekirklees.org.uk
 logamsemar.xyz
-malamminggumiko.xyz
 mail.ru
+malamminggumiko.xyz
 minexmr.com
 mms.att.net
 mta7.smtp.airbnb.com
