@@ -1,53 +1,48 @@
-name: Unified List Update
+name: Update IP & Domain Lists
 
 on:
   schedule:
-    # Jalan setiap tanggal 1 jam 00:00 UTC (07:00 WIB)
-    # Ubah cron sesuai kebutuhan, misal '0 0 1 * *' untuk bulanan
-    - cron: '0 0 1 * *'
-  workflow_dispatch: # Agar bisa dijalankan manual kapan saja
-
-permissions:
-  contents: write
+    - cron: '0 0 1 * *' # Bulanan
+  workflow_dispatch:
 
 jobs:
-  update-lists:
+  update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
-      - name: Checkout Repository
+      - name: Checkout Repo
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install Dependencies
+      - name: Install Requirements
         run: |
+          # Pastikan file requirements.txt ada isi: requests, pytz
           pip install -r scripts/requirements.txt
 
-      - name: Run Unified Updater Script
+      - name: Run Manager Script
         env:
           ABUSEIPDB_KEY: ${{ secrets.ABUSEIPDB_API_KEY }}
         run: |
-          python scripts/unified_updater.py
+          python scripts/manager.py
 
-      - name: Check for Changes & Commit
+      - name: Commit & Push Changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # Add file yang mungkin baru dibuat atau diupdate
-          git add drop.txt pass.txt whitelist-domain.txt blacklist-domain.txt
+          # Add folder lists/ tempat output disimpan
+          git add lists/*.txt
           
-          # Cek status diff
           if ! git diff --cached --quiet; then
-            timestamp=$(date -u +'%Y-%m-%d %H:%M UTC')
-            git commit -m "🔄 Update IP & Domain Lists - $timestamp"
-            git pull --rebase # Mencegah conflict jika ada push lain
+            git commit -m "🔄 Auto-update lists - $(date +'%Y-%m-%d')"
+            git pull --rebase
             git push
-            echo "✅ Changes pushed successfully."
           else
-            echo "ℹ️ No changes detected."
+            echo "ℹ️ No changes detected"
           fi
