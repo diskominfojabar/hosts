@@ -2,7 +2,7 @@ name: Update IP & Domain Lists
 
 on:
   schedule:
-    - cron: '0 0 1 * *' # Bulanan
+    - cron: '0 9 * * *'  # Runs at 09:00 UTC (16:00 WIB) every day
   workflow_dispatch:
 
 jobs:
