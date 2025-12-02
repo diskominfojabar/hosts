@@ -1,0 +1,53 @@
+name: Unified List Update
+
+on:
+  schedule:
+    # Jalan setiap tanggal 1 jam 00:00 UTC (07:00 WIB)
+    # Ubah cron sesuai kebutuhan, misal '0 0 1 * *' untuk bulanan
+    - cron: '0 0 1 * *'
+  workflow_dispatch: # Agar bisa dijalankan manual kapan saja
+
+permissions:
+  contents: write
+
+jobs:
+  update-lists:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: Run Unified Updater Script
+        env:
+          ABUSEIPDB_KEY: ${{ secrets.ABUSEIPDB_API_KEY }}
+        run: |
+          python scripts/unified_updater.py
+
+      - name: Check for Changes & Commit
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Add file yang mungkin baru dibuat atau diupdate
+          git add drop.txt pass.txt whitelist-domain.txt blacklist-domain.txt
+          
+          # Cek status diff
+          if ! git diff --cached --quiet; then
+            timestamp=$(date -u +'%Y-%m-%d %H:%M UTC')
+            git commit -m "🔄 Update IP & Domain Lists - $timestamp"
+            git pull --rebase # Mencegah conflict jika ada push lain
+            git push
+            echo "✅ Changes pushed successfully."
+          else
+            echo "ℹ️ No changes detected."
+          fi
