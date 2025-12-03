@@ -42,6 +42,14 @@ jobs:
         run: |
           python fetch_ip_ranges.py
 
+      - name: Check created files
+        run: |
+          echo "=== Checking for created files ==="
+          ls -lh *.txt 2>/dev/null || echo "No .txt files found"
+          echo ""
+          echo "=== Git status before add ==="
+          git status
+
       - name: Commit and push if changed
         id: git-commit
         run: |
@@ -49,17 +57,25 @@ jobs:
           git config --local user.name "github-actions[bot]"
 
           # Add all IP range files (both tracked and untracked)
-          git add whitelist.txt pass.txt blacklist.txt drop.txt 2>/dev/null || true
+          echo "=== Adding files to git ==="
+          git add -f whitelist.txt pass.txt blacklist.txt drop.txt 2>&1 || true
+
+          echo ""
+          echo "=== Git status after add ==="
+          git status
 
           # Check if there are changes to commit
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo ""
+            echo "=== No changes to commit ==="
             echo "changed=false" >> $GITHUB_OUTPUT
           else
+            echo ""
+            echo "=== Committing changes ==="
             git commit -m "Auto-update IP ranges - $(date +'%Y-%m-%d %H:%M:%S UTC')"
             git push
             echo "changed=true" >> $GITHUB_OUTPUT
-            echo "Changes committed and pushed"
+            echo "✅ Changes committed and pushed successfully"
           fi
 
       - name: Create summary
