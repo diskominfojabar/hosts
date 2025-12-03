@@ -1,0 +1,8 @@
+# No external dependencies required
+# Script uses only Python standard library modules:
+# - json
+# - os
+# - sys
+# - ipaddress
+# - urllib.request
+# - urllib.error
