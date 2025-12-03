@@ -1,0 +1,4 @@
+# Blacklist - AbuseIPDB
+# Total entries: 0
+# Last updated: Thu Dec  4 00:56:34 WIB 2025
+
